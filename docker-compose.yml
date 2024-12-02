@@ -8,6 +8,7 @@ services:
     volumes:
       - ./docker/dhis.conf:/opt/dhis2/dhis.conf:ro
       - ./docker/log4j2.xml:/opt/dhis2/log4j2.xml:ro
+      - ../dhis-google-auth.json:/opt/dhis2/dhis-google-auth.json:ro
     environment:
       JAVA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8081 \
               -Dlog4j2.configurationFile=/opt/dhis2/log4j2.xml
